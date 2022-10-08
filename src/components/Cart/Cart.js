@@ -1,8 +1,8 @@
 import React from 'react';
 import './Cart.css'
 
-const Cart = ({cart}) => {
-   console.log(cart);
+const Cart = ({cart,handleDeleteAll,children}) => {
+   
     let total=0;
     let shipping =0;
     let quantity = 0;
@@ -21,6 +21,8 @@ const Cart = ({cart}) => {
             <h3>Total Shipping:${shipping}</h3>
             <h3>Tax:${tax}</h3>
             <h3>Grand Total:${grandtotal.toFixed(2)}</h3>
+            <button onClick={()=>handleDeleteAll()}> Clear All Cart</button>
+            {children}
         </div>
     );
 };
